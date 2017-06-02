@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+  font-feature-settings: 'lnum';
+}
+
+#letter {
+  max-width: 28em;
+  margin: 0 auto;
+  margin-top: 8rem;
+  font-size: 28px;
+}
+
+#dear, #sign-off {
+  font-style: italic;
+  margin: 2em 0;
+}
+
+#dear {
+  position: relative;
+
+  &::before {
+    content: '❧';
+    display: block;
+    position: absolute;
+    left: -1.25em;
+    top: -0.1em;
+    font-size: 1.25em;
+    color: red;
+  }
+}
+
+p {
+  line-height: 1.45;
+}
