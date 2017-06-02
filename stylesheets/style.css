@@ -3,6 +3,12 @@ body {
   background-color: black;
 }
 
-.stars {
-  position: fixed;
+.star-canvas {
+  position: absolute;
+}
+
+#stars {
+  width: 100vw;
+  height: 200vh;
+  overflow: hidden;
 }
