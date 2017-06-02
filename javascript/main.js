@@ -1,21 +1,16 @@
 window.onload = () => {
   let starElement = document.getElementById('stars')
   let canvases = []
-  let speeds = [1, 0.9, 0.75, 0.5, 0.25, 0.1]
+  let speeds = [1, 0.9, 0.7, 0.5, 0.25, 0]
   let layers = 6;
 
-  for (let i = 1; i <= layers; i++) {
-    let canvas = createStarCanvas(speeds[i - 1], (layers - i) * 100, clamp(i / layers + 0.1, 0, 1), starElement.offsetWidth, starElement.offsetHeight)
-
-    canvases.push(canvas)
-    starElement.appendChild(canvas)
-  }
+  createStars()
 
   let scrollUpdating = false
 
-  window.addEventListener('scroll', function(event) {
+  window.addEventListener('scroll', (event) => {
     if (!scrollUpdating) {
-      window.requestAnimationFrame(updateScroll)
+      updateScroll()
     }
 
     scrollUpdating = false
@@ -26,6 +21,19 @@ window.onload = () => {
     canvases.map((canvas) => canvas.updateScroll(window.scrollY))
   }
 
+  window.addEventListener('resize', (event) => {
+    starElement.innerHTML = ''
+    createStars()
+  })
+
+  function createStars() {
+    for (let i = 1; i <= layers; i++) {
+      let canvas = createStarCanvas(speeds[i - 1], (layers - i) * 200, clamp(i / layers + 0.1, 0, 1), starElement.offsetWidth, starElement.offsetHeight)
+
+      canvases.push(canvas)
+      starElement.appendChild(canvas)
+    }
+  }
 }
 
 function clamp(value, low, high) {
@@ -55,14 +63,13 @@ function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
     let y = Math.random() * canvas.height
 
     context.beginPath()
-    drawCircle(x, y, 1, context)
+    drawCircle(x, y, Math.random() + 0.5, context)
     context.closePath()
     context.fill()
   }
 
   canvas.updateScroll = (scrollDistance) => {
-    // canvas.style.top = scrollDistance * scrollSpeed + 'px'
-    canvas.style.transform = 'translate3d(0, ' + scrollDistance * scrollSpeed + 'px, 0)'
+    canvas.style.transform = 'translate3d(0px, ' + scrollDistance * scrollSpeed + 'px, 0px)'
   }
 
   return canvas
