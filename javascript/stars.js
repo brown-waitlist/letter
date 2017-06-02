@@ -1,8 +1,10 @@
+'use strict'
+
 window.onload = () => {
   let starElement = document.getElementById('stars')
   let canvases = []
-  let speeds = [1, 0.9, 0.7, 0.5, 0.25, 0.1]
-  let layers = 6;
+  let speeds = [2, 1.5, 1, 0.5, 0.25, 0.1]
+  let layers = 5;
 
   createStars()
 
@@ -28,8 +30,11 @@ window.onload = () => {
 
   function createStars() {
     let size = starElement.offsetWidth * starElement.offsetHeight
-    for (let i = 1; i <= layers; i++) {
-      let canvas = createStarCanvas(speeds[i - 1], (layers - i + 1) * (size / 25000), 1 - ((i / layers) * 0.8 + 0.2), starElement.offsetWidth, starElement.offsetHeight)
+    for (let i = 1; i <= layers; i++) { // higher the layer, farther back
+      let numStars = (i + 1) * (size / 10000)
+      let minOpacity = 0.25
+      let opacity = ((1 - (i / layers)) * (1 - minOpacity) + minOpacity)
+      let canvas = createStarCanvas(speeds[i - 1], numStars, opacity, starElement.offsetWidth, starElement.offsetHeight * clamp(speeds[i - 1], 1, 2))
 
       canvases.push(canvas)
       starElement.appendChild(canvas)
