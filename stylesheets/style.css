@@ -8,6 +8,7 @@ body {
 }
 
 #stars {
+  position: absolute;
   width: 100vw;
   height: 200vh;
   overflow: hidden;
