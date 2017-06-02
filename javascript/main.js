@@ -1,7 +1,7 @@
 window.onload = () => {
   let starElement = document.getElementById('stars')
   let canvases = []
-  let speeds = [1, 0.9, 0.7, 0.5, 0.25, 0]
+  let speeds = [1, 0.9, 0.7, 0.5, 0.25, 0.1]
   let layers = 6;
 
   createStars()
@@ -10,14 +10,14 @@ window.onload = () => {
 
   window.addEventListener('scroll', (event) => {
     if (!scrollUpdating) {
-      updateScroll()
+      window.requestAnimationFrame(updateScroll)
     }
 
     scrollUpdating = false
   })
 
   function updateScroll() {
-    scrollUpdating = true;
+    scrollUpdating = true
     canvases.map((canvas) => canvas.updateScroll(window.scrollY))
   }
 
@@ -27,8 +27,9 @@ window.onload = () => {
   })
 
   function createStars() {
+    let size = starElement.offsetWidth * starElement.offsetHeight
     for (let i = 1; i <= layers; i++) {
-      let canvas = createStarCanvas(speeds[i - 1], (layers - i) * 200, clamp(i / layers + 0.1, 0, 1), starElement.offsetWidth, starElement.offsetHeight)
+      let canvas = createStarCanvas(speeds[i - 1], (layers - i + 1) * (size / 25000), 1 - ((i / layers) * 0.8 + 0.2), starElement.offsetWidth, starElement.offsetHeight)
 
       canvases.push(canvas)
       starElement.appendChild(canvas)
@@ -49,10 +50,13 @@ function clamp(value, low, high) {
 }
 
 function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
+  console.log(arguments)
+
   let canvas = document.createElement('canvas')
   canvas.width = width
   canvas.height = height
   canvas.className = 'star-canvas'
+  canvas.setAttribute('data-scroll', scrollSpeed)
 
   let context = canvas.getContext('2d')
 
@@ -69,7 +73,7 @@ function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
   }
 
   canvas.updateScroll = (scrollDistance) => {
-    canvas.style.transform = 'translate3d(0px, ' + scrollDistance * scrollSpeed + 'px, 0px)'
+    canvas.style.transform = 'translate3d(0px, ' + -scrollDistance * scrollSpeed + 'px, 0px)'
   }
 
   return canvas

@@ -1,9 +1,10 @@
 body {
   margin: 0;
+  background-color: black;
 }
 
 .star-canvas {
-  position: absolute;
+  position: fixed;
 }
 
 #stars {
