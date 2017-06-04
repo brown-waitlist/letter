@@ -7,14 +7,15 @@ body {
   font-size: 18px;
   font-family: 'EB Garamond', Garamond, serif;
   font-feature-settings: 'lnum';
-  font-size: 28px; }
+  font-size: 28px;
+  border-top: 1em solid #960404; }
 
 section {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
   padding: 2em 10em;
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
   align-items: center; }
 
@@ -55,3 +56,9 @@ p {
   width: 100vw;
   height: 100vh;
   overflow: hidden; }
+
+a {
+  color: #960404;
+  text-decoration: underline; }
+  a a:visited {
+    color: #960404; }

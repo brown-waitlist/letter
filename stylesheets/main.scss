@@ -6,7 +6,7 @@ $red: rgb(238, 0, 0);
   max-width: 100%;
   margin: 0 auto;
   padding: 2em 10em;
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
 }
@@ -21,7 +21,7 @@ body {
   font-family: 'EB Garamond', Garamond, serif;
   font-feature-settings: 'lnum';
   font-size: 28px;
-  // border-top: 0.5em solid $dark-red;
+  border-top: 1em solid $dark-red;
 }
 
 section {
@@ -72,4 +72,13 @@ p {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+a {
+  color: $dark-red;
+  text-decoration: underline;
+
+  a:visited {
+    color: $dark-red;
+  }
 }
