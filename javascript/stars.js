@@ -31,10 +31,10 @@ window.onload = () => {
   function createStars() {
     let size = starElement.offsetWidth * starElement.offsetHeight
     for (let i = 1; i <= layers; i++) { // higher the layer, farther back
-      let numStars = (i + 1) * (size / 10000)
+      let numStars = (i + 1) * (size / 7500)
       let minOpacity = 0.25
       let opacity = ((1 - (i / layers)) * (1 - minOpacity) + minOpacity)
-      let canvas = createStarCanvas(speeds[i - 1], numStars, opacity, starElement.offsetWidth, starElement.offsetHeight * clamp(speeds[i - 1], 1, 2))
+      let canvas = createStarCanvas(speeds[i - 1], numStars, opacity, starElement.offsetWidth, starElement.offsetHeight * speeds[i - 1])
 
       canvases.push(canvas)
       starElement.appendChild(canvas)
@@ -73,7 +73,7 @@ function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
     let y = Math.random() * canvas.height
 
     context.beginPath()
-    drawCircle(x, y, Math.random() + 1, context)
+    drawCircle(x, y, Math.random() + 0.5, context)
     context.closePath()
     context.fill()
   }

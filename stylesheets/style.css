@@ -18,7 +18,11 @@ section {
   display: flex;
   align-items: center; }
 
-#why-brown, #please {
+#why-brown {
+  background-color: #0a0a0a;
+  color: white; }
+
+#please {
   background-color: #960404;
   color: white; }
 
@@ -40,7 +44,8 @@ p {
   padding-bottom: 0.5em; }
 
 .star-canvas {
-  position: fixed; }
+  position: fixed;
+  transform: translate3d(0, 0, 0); }
 
 #stars {
   position: absolute;

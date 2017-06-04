@@ -28,7 +28,12 @@ section {
   @include container();
 }
 
-#why-brown, #please {
+#why-brown {
+  background-color: rgb(10, 10, 10);
+  color: white;
+}
+
+#please {
   background-color: $dark-red;
   color: white;
 }
@@ -56,6 +61,7 @@ p {
 
 .star-canvas {
   position: fixed;
+  transform: translate3d(0, 0, 0);
 }
 
 #stars {
