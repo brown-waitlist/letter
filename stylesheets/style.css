@@ -2,29 +2,41 @@
 body {
   margin: 0;
   font-size: 18px;
-  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
-  font-feature-settings: 'lnum'; }
-
-#letter {
-  max-width: 28em;
-  margin: 0 auto;
-  margin-top: 8rem;
+  font-family: 'EB Garamond', Garamond, serif;
+  font-feature-settings: 'lnum';
   font-size: 28px; }
 
-#dear, #sign-off {
-  font-style: italic;
-  margin: 2em 0; }
+#intro {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2em 10em;
+  height: 80vh;
+  display: flex;
+  align-items: center; }
+
+#why-brown {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2em 10em;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: #960404;
+  color: white; }
 
 #dear {
-  position: relative; }
+  position: relative;
+  font-style: italic;
+  margin-bottom: 1.5em; }
   #dear::before {
     content: '❧';
     display: block;
     position: absolute;
-    left: -1.25em;
-    top: -0.1em;
-    font-size: 1.25em;
-    color: red; }
+    left: -1.2em;
+    top: -0.15em;
+    font-size: 1.4em;
+    color: #960404; }
 
 p {
-  line-height: 1.45; }
+  line-height: 1.45;
+  padding-bottom: 0.5em; }
