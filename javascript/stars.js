@@ -4,7 +4,7 @@ window.onload = () => {
   let starElement = document.getElementById('stars')
   let canvases = []
   let speeds = [2, 1.5, 1, 0.5, 0.25, 0.1]
-  let layers = 5;
+  let layers = 3;
 
   createStars()
 
@@ -64,6 +64,7 @@ function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
   canvas.setAttribute('data-scroll', scrollSpeed)
 
   let context = canvas.getContext('2d')
+  // context.scale(2, 2)
 
   context.fillStyle = 'rgba(255, 255, 255, ' + opacity + ')'
 
@@ -72,7 +73,7 @@ function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
     let y = Math.random() * canvas.height
 
     context.beginPath()
-    drawCircle(x, y, Math.random() + 0.5, context)
+    drawCircle(x, y, Math.random() + 1, context)
     context.closePath()
     context.fill()
   }

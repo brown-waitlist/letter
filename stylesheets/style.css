@@ -10,6 +10,7 @@ body {
   font-size: 28px; }
 
 section {
+  position: relative;
   max-width: 100%;
   margin: 0 auto;
   padding: 2em 10em;
@@ -37,3 +38,15 @@ section {
 p {
   line-height: 1.45;
   padding-bottom: 0.5em; }
+
+.star-canvas {
+  position: fixed; }
+
+#stars {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
