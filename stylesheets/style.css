@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.content {
+  padding: 1em; }
+
 body {
   margin: 0;
   font-size: 18px;
@@ -6,21 +9,15 @@ body {
   font-feature-settings: 'lnum';
   font-size: 28px; }
 
-#intro {
+section {
   max-width: 100%;
   margin: 0 auto;
   padding: 2em 10em;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   align-items: center; }
 
-#why-brown {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2em 10em;
-  height: 80vh;
-  display: flex;
-  align-items: center;
+#why-brown, #please {
   background-color: #960404;
   color: white; }
 

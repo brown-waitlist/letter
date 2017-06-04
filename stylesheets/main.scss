@@ -5,9 +5,13 @@ $red: rgb(238, 0, 0);
   max-width: 100%;
   margin: 0 auto;
   padding: 2em 10em;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
+}
+
+.content {
+  padding: 1em;
 }
 
 body {
@@ -19,12 +23,11 @@ body {
   // border-top: 0.5em solid $dark-red;
 }
 
-#intro {
+section {
   @include container();
 }
 
-#why-brown {
-  @include container();
+#why-brown, #please {
   background-color: $dark-red;
   color: white;
 }
