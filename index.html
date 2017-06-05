@@ -33,9 +33,137 @@
     src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
   }
+
+  @charset "UTF-8";
+  .content {
+    padding: 3.25rem 0;
+    max-width: 24em;
+    margin: 0 auto; }
+
+  html {
+    font-family: 'EB Garamond', Garamond, serif;
+    font-size: 28px; }
+
+  body {
+    margin: 0;
+    font-feature-settings: 'lnum';
+    -webkit-font-feature-settings: 'lnum';
+    -moz-font-feature-settings: 'lnum';
+    border-top: 1em solid #960404; }
+
+  section {
+    background-color: white; }
+
+  #why-brown {
+    background-color: #0a0a0a;
+    color: white;
+    position: relative; }
+
+  #please {
+    background-color: rgba(150, 4, 4, 0.8);
+    color: white;
+    position: relative; }
+
+  #dear {
+    font-style: italic;
+    margin-bottom: 1.5em;
+    position: relative; }
+    #dear::before {
+      content: '❧';
+      display: block;
+      position: absolute;
+      left: -1.2em;
+      top: -0.15em;
+      font-size: 1.4em;
+      color: #960404; }
+
+  p {
+    line-height: 1.45;
+    margin-top: 0;
+    margin-bottom: 0.5em; }
+    p:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0; }
+
+  .star-canvas {
+    position: fixed;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0); }
+
+  #stars {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; }
+
+  a {
+    color: #960404;
+    text-decoration: underline; }
+    a a:visited {
+      color: #960404; }
+
+  .project-collection {
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 3em; }
+    .project-collection::after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  .project {
+    box-sizing: border-box;
+    width: 31%;
+    margin-right: 3.333%;
+    float: left;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 0.2rem;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 3px 10px #ddd;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    -moz-transition-duration: 250ms; }
+    .project:hover {
+      top: -8px;
+      box-shadow: 0 11px 15px #ddd; }
+    .project-title {
+      font-family: 'Source Sans Pro', 'Segoe UI', 'Lucida Grande', Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      margin: 1em 0; }
+    .project-description {
+      font-weight: normal;
+      color: black;
+      font-size: 0.75em;
+      text-align: left;
+      margin: 1em; }
+    .project-image {
+      width: 100%;
+      display: block; }
+    .project:last-child {
+      margin-right: 0; }
+
+  .background-image {
+    width: 100%;
+    position: fixed;
+    bottom: 40vh;
+    left: 0;
+    z-index: -1; }
+
+  #sign-off {
+    padding-top: 1em;
+    font-style: italic; }
+
   </style>
   <!-- <link href="https://fonts.googleapis.com/css?family=Cardo:400,400i|Source+Sans+Pro:700" rel="stylesheet"> -->
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
 </head>
 <body>
   <section id="intro">
@@ -64,7 +192,7 @@
     </div>
     <div class="project-collection">
       <a href="http://www.northeastern.edu/scout" class="project">
-        <img src="images/expmag.png" class="project-image">
+        <img src="images/expmag.jpg" class="project-image">
         <div class="project-title">Experience Magazine</div>
         <div class="project-description">
           <p>
@@ -117,7 +245,10 @@
     </div>
   </section>
 
-  <script src="javascript/stars-es5.min.js"></script>
+  <!-- <script src="javascript/stars-es5.min.js"></script> -->
+  <script>
+    "use strict";function clamp(t,a,e){return a>t?a:t>e?e:t}function createStarCanvas(t,a,e,n,r){var o=document.createElement("canvas");o.width=n,o.height=r,o.className="star-canvas",o.setAttribute("data-scroll",t);var i=o.getContext("2d");i.fillStyle="rgba(255, 255, 255, "+e+")";for(var s=0;a>s;s++){var d=Math.random()*o.width,l=Math.random()*o.height;i.beginPath(),drawCircle(d,l,Math.random()+.5,i),i.closePath(),i.fill()}return o.updateScroll=function(a){o.style.transform="translate3d(0px, "+-a*t+"px, 0px)",o.style["-webkit-transform"]="translate3d(0px, "+-a*t+"px, 0px)",o.style["-moz-transform"]="translate3d(0px, "+-a*t+"px, 0px)"},o}function drawCircle(t,a,e,n){n.arc(t,a,e,0,2*Math.PI,!0)}window.onload=function(){function t(){i=!0,n.map(function(t){return t.updateScroll(window.scrollY)})}function a(){for(var t=e.offsetWidth*e.offsetHeight,a=1;o>=a;a++){var i=(a+1)*(t/7500),s=.5,d=(1-a/o)*(1-s)+s,l=createStarCanvas(r[a-1],i,d,e.offsetWidth,e.offsetHeight*r[a-1]);n.push(l),e.appendChild(l)}}var e=document.getElementById("stars"),n=[],r=[1.5,2,1,.5,.25,.1],o=3;a();var i=!1;window.addEventListener("scroll",function(){i||window.requestAnimationFrame(t),i=!1}),window.addEventListener("resize",function(){e.innerHTML="",a()})};
+  </script>
 
 </body>
 </html>
