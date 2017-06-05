@@ -20,6 +20,10 @@ body {
   border-top: 1em solid $dark-red;
 }
 
+section {
+  background-color: white;
+}
+
 #why-brown {
   background-color: rgb(10, 10, 10);
   color: white;
@@ -27,8 +31,9 @@ body {
 }
 
 #please {
-  background-color: $dark-red;
+  background-color: rgba($dark-red, 0.8);
   color: white;
+  position: relative;
 }
 
 #dear {
@@ -86,7 +91,7 @@ a {
 .project-collection {
   width: 90vw;
   margin: 0 auto;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
 
   &::after {
     content: " ";
@@ -141,4 +146,17 @@ a {
   &:last-child {
     margin-right: 0;
   }
+}
+
+.background-image {
+  width: 100%;
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  z-index: -1;
+}
+
+#sign-off {
+  padding-top: 1em;
+  font-style: italic;
 }
