@@ -80,6 +80,8 @@ function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
 
   canvas.updateScroll = (scrollDistance) => {
     canvas.style.transform = 'translate3d(0px, ' + -scrollDistance * scrollSpeed + 'px, 0px)'
+    canvas.style['-webkit-transform'] = 'translate3d(0px, ' + -scrollDistance * scrollSpeed + 'px, 0px)'
+    canvas.style['-moz-transform']= 'translate3d(0px, ' + -scrollDistance * scrollSpeed + 'px, 0px)'
   }
 
   return canvas

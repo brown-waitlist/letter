@@ -1,36 +1,33 @@
 @charset "UTF-8";
 .content {
-  padding: 1em; }
+  padding: 3rem 0;
+  max-width: 24em;
+  margin: 0 auto; }
+
+html {
+  font-family: 'EB Garamond', Garamond, serif;
+  font-size: 28px; }
 
 body {
   margin: 0;
-  font-size: 18px;
-  font-family: 'EB Garamond', Garamond, serif;
   font-feature-settings: 'lnum';
-  font-size: 28px;
+  -webkit-font-feature-settings: 'lnum';
+  -moz-font-feature-settings: 'lnum';
   border-top: 1em solid #960404; }
-
-section {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2em 10em;
-  min-height: 50vh;
-  display: flex;
-  align-items: center; }
 
 #why-brown {
   background-color: #0a0a0a;
-  color: white; }
+  color: white;
+  position: relative; }
 
 #please {
   background-color: #960404;
   color: white; }
 
 #dear {
-  position: relative;
   font-style: italic;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  position: relative; }
   #dear::before {
     content: '❧';
     display: block;
@@ -43,10 +40,14 @@ section {
 p {
   line-height: 1.45;
   padding-bottom: 0.5em; }
+  p:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0; }
 
 .star-canvas {
   position: fixed;
-  transform: translate3d(0, 0, 0); }
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0); }
 
 #stars {
   position: absolute;
@@ -62,3 +63,43 @@ a {
   text-decoration: underline; }
   a a:visited {
     color: #960404; }
+
+.project-collection {
+  width: 90vw;
+  margin: 0 auto;
+  padding-bottom: 2em; }
+  .project-collection::after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.project {
+  box-sizing: border-box;
+  width: 31%;
+  margin-right: 3.333%;
+  float: left;
+  display: block;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 3px 10px #ddd;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  -moz-transition-duration: 250ms; }
+  .project:hover {
+    top: -5px;
+    box-shadow: 0 8px 15px #ddd; }
+  .project-title {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    padding: 0.5em; }
+  .project-description {
+    font-weight: normal; }
+  .project-image {
+    width: 100%;
+    display: block; }
+  .project:last-child {
+    margin-right: 0; }
