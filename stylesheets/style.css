@@ -99,7 +99,7 @@ a {
     top: -8px;
     box-shadow: 0 11px 15px #ddd; }
   .project-title {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Segoe UI', 'Lucida Grande', Helvetica, Arial, sans-serif;
     font-weight: bold;
     margin: 1em 0; }
   .project-description {
