@@ -2,7 +2,7 @@ $dark-red: rgb(150, 4, 4);
 $red: rgb(238, 0, 0);
 
 .content {
-  padding: 3rem 0;
+  padding: 3.25rem 0;
   max-width: 24em;
   margin: 0 auto;
 }
@@ -49,7 +49,8 @@ body {
 
 p {
   line-height: 1.45;
-  padding-bottom: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 
   &:last-child {
     padding-bottom: 0;
@@ -100,7 +101,7 @@ a {
   margin-right: 3.333%;
   float: left;
   display: block;
-  // border: 1px solid #aaa;
+  border: 1px solid #ddd;
   // padding: 1rem;
   border-radius: 0.2rem;
   text-decoration: none;
@@ -121,11 +122,15 @@ a {
   &-title {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    padding: 0.5em;
+    margin: 1em 0;
   }
 
   &-description {
     font-weight: normal;
+    color: black;
+    font-size: 0.75em;
+    text-align: left;
+    margin: 1em;
   }
 
   &-image {

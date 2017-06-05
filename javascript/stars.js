@@ -55,7 +55,7 @@ function clamp(value, low, high) {
 }
 
 function createStarCanvas(scrollSpeed, numStars, opacity, width, height) {
-  console.log(arguments)
+  // console.log(arguments)
 
   let canvas = document.createElement('canvas')
   canvas.width = width
