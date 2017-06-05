@@ -96,8 +96,8 @@ a {
   -webkit-transition-duration: 250ms;
   -moz-transition-duration: 250ms; }
   .project:hover {
-    top: -5px;
-    box-shadow: 0 8px 15px #ddd; }
+    top: -8px;
+    box-shadow: 0 11px 15px #ddd; }
   .project-title {
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     font-weight: bold;
@@ -117,7 +117,7 @@ a {
 .background-image {
   width: 100%;
   position: fixed;
-  bottom: 2rem;
+  bottom: 40vh;
   left: 0;
   z-index: -1; }
 

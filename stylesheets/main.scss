@@ -120,8 +120,8 @@ a {
   -moz-transition-duration: 250ms;
 
   &:hover {
-    top: -5px;
-    box-shadow: 0 8px 15px #ddd;
+    top: -8px;
+    box-shadow: 0 11px 15px #ddd;
   }
 
   &-title {
@@ -151,7 +151,7 @@ a {
 .background-image {
   width: 100%;
   position: fixed;
-  bottom: 2rem;
+  bottom: 40vh;
   left: 0;
   z-index: -1;
 }
